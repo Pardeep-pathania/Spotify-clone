@@ -41,3 +41,30 @@
 .p-1{
     padding: 10px;
 }
+
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    background-color: #2c2c2c; /* Background color of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Color of the thumb on hover */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* Make scrollbar thin */
+    scrollbar-color: #555 #2c2c2c; /* Thumb color and track color */
+}
+
+/* For Internet Explorer and Edge */
+.scrollable {
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar when not in use */
+}

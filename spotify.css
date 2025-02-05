@@ -51,6 +51,7 @@ body{
     width: 25px;
 }
 .library{
+    overflow-x: hidden;
     min-height: 80vh;
     position: relative;
 }
@@ -162,13 +163,47 @@ buttons > *{
 .playbar{
     position:absolute;
     bottom: 0;
-    background-color: rgb(28, 49, 28);
-    width: 100%;
+    background-color: rgb(245, 250, 245);
+    width: 90%;
     padding: 12px;
+    margin: 10px;
 }
 
 .songbuttons{
     display: flex;
     justify-content: center;
     gap: 16px;
+}
+
+.songList ul{
+    padding: 0 10px;
+    padding-top: 10px;
+}
+
+.songList ul li{
+    list-style-type: decimal;
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 1px solid white;
+    margin: 12px 0;
+    padding : 17px;
+    border-radius: 5px;
+   
+}
+
+.playnow{
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playnow span{
+    margin-right: 10px;
+    font-size: 14px;
+    width: 64px;
+    color: #746c6c;
 }

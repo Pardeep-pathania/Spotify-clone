@@ -43,7 +43,6 @@
 }
 
 
-/* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
     width: 12px; /* Width of the scrollbar */
     background-color: #2c2c2c; /* Background color of the scrollbar */

@@ -45,6 +45,7 @@ body{
     gap: 15px;
     width:100% ;
     padding-top: 14px;
+    padding-bottom: 10px;
     font-weight: bold;
 }
 .heading img{
@@ -54,11 +55,13 @@ body{
     overflow-x: hidden;
     min-height: 80vh;
     position: relative;
+
 }
 
 .footer{
+    
     display: flex;
-    font-size: 10px;
+    font-size: 13px;
     color: grey;
     gap: 13px;
     padding: 10px;
@@ -162,11 +165,12 @@ buttons > *{
 
 .playbar{
     position:absolute;
-    bottom: 0;
-    background-color: rgb(245, 250, 245);
+    bottom: 20px;
+    background-color: #dedede;
+    filter: invert(1);
     width: 90%;
     padding: 12px;
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .songbuttons{
@@ -175,23 +179,33 @@ buttons > *{
     gap: 16px;
 }
 
+.songList{
+    overflow-y: scroll;
+    max-height: 62vh;
+    margin:40px 0;
+}
+
 .songList ul{
     padding: 0 10px;
-    padding-top: 10px;
 }
 
 .songList ul li{
     list-style-type: decimal;
     display: flex;
     justify-content: space-between;
-    gap: 3px;
+    gap: 13px;
     cursor: pointer;
     padding: 12px 0;
     border: 1px solid white;
     margin: 12px 0;
-    padding : 17px;
+    padding : 13px;
     border-radius: 5px;
    
+}
+
+.songList .info{
+    font-size: 12px;
+    width: 344px;
 }
 
 .playnow{
@@ -206,4 +220,38 @@ buttons > *{
     font-size: 14px;
     width: 64px;
     color: #746c6c;
+}
+
+.seekbar{
+    height: 2px;
+    width: 98%;
+    background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    margin-top: 5px;
+}
+
+.circle{
+    height: 13px;
+    width: 13px;
+    border-radius: 13px;
+    background-color: black;
+    position: relative;
+    bottom: 6px;
+    left: 0%;
+    transition: left 0.5s;
+}
+
+.songbuttons img{
+    cursor: pointer;
+}
+
+.songinfo, .songtime{
+    color: black;
+}
+
+.songDetail{
+    display:flex;
+    justify-content: space-between;
 }

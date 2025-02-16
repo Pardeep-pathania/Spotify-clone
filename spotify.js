@@ -1,5 +1,5 @@
 
-
+let songs;
 let currentSong = new Audio();
 
 
@@ -21,7 +21,6 @@ function convertSecondsToMinutesSeconds(totalSeconds) {
 async function getSongs() {
     let a = await fetch("http://127.0.0.1:5500/song/")
     let response = await a.text();
-    console.log(response)
     let div = document.createElement("div")
     div.innerHTML = response;
     let as = div.getElementsByTagName("a")
@@ -55,10 +54,9 @@ async function main() {
 
     // Get the list of all songs 
 
-    let songs = await getSongs()
+    songs = await getSongs()
     playMusic(songs[0],true)
 
-    console.log(songs)
 
     // Show all the sing in playlist
 
@@ -137,6 +135,37 @@ async function main() {
     document.querySelector(".close").addEventListener("click", ()=>{
         document.querySelector(".left").style.left = "-120%"
     })
- 
+
+    // Add an event Listener to previous
+
+    previous.addEventListener("click", ()=>{
+        console.log("Previous Clicked");
+        console.log(currentSong);
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index-1)>= length){
+            playMusic(songs[index-1])
+        }
+    })
+
+// Add an event Listener to next
+
+    next.addEventListener("click", ()=>{
+        currentSong.pause()
+        console.log("Next Clicked");
+
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index+1)< songs.length){
+            playMusic(songs[index+1])
+        }
+        
+    })
+    
+    // ADD an event to volume
+
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e)=>{
+        console.log("Setting volume to", e.target.value, "/100")
+        currentSong.volume = parseInt(e.target.value)/100
+    })
+
 }
 main()

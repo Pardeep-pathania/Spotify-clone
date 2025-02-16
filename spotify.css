@@ -264,8 +264,30 @@ buttons > *{
     cursor: pointer;
 }
 
-.songinfo, .songtime{
+.timevol{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.songinfo{
     color: black;
+    padding: 0 12px;
+    width: 250px;
+}
+
+.songtime{
+    color: black;
+    padding: 0 12px;
+    width: 125px;
+}
+
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .songDetail{
@@ -294,6 +316,7 @@ buttons > *{
         transition: all .3s;
         z-index: 1;
         width:350px;
+        padding: 0;
     }
     .left .close{
         display: block;
@@ -301,6 +324,22 @@ buttons > *{
         right: 31px;
         top: 25px;
         width: 29px;
+    }
+
+    .timevol{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .songinfo, .songtime{
+        width: auto;
+    }
+
+    .info div{
+        word-break: break-all;
     }
 
     .right{
@@ -328,5 +367,12 @@ buttons > *{
         gap: 23px;
         align-items: center;
 
+    }
+}
+
+@media(max-width: 400px){
+
+    .card{
+        width: 84vw;
     }
 }
